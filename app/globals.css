@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink text-paper font-body antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.gold");
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: theme("colors.gold");
+    color: theme("colors.ink");
+  }
+}
+
+@layer utilities {
+  .hairline {
+    border-color: theme("colors.line");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
